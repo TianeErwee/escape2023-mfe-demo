@@ -8,10 +8,10 @@ import {
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
-import { DashboardTileMicrofrontend } from '../../models/microfrontend';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
+import { DashboardTileMicrofrontend } from '@bbd-mfe-new/models';
 
 @Component({
   selector: 'bbd-mfe-new-dashboard-tile',

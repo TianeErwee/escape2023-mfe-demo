@@ -4,22 +4,24 @@ import {
 } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 
-import { appRoutes } from '../app/app.routes';
 import { startsWith } from './router.utils';
+
+import { mfeAvailableGuard } from '../guards/mfe-available.guard';
 import {
   DashboardTileMicrofrontend,
   MenuMicrofrontendModel,
   Microfrontend,
   WebComponentMicrofrontend,
-} from '../app/models/microfrontend';
-import { HomeComponent } from '../app/components/home/home.component';
-import { mfeAvailableGuard } from '../app/microfrontends/guards/mfe-available.guard';
+} from '@bbd-mfe-new/models';
 
 /*istanbul ignore next*/
 export class MenuUtils {
   registry: any;
 
-  buildRoutes = (options: MenuMicrofrontendModel[]): Routes => {
+  buildRoutes = (
+    options: MenuMicrofrontendModel[],
+    appRoutes: Routes
+  ): Routes => {
     const angularModels: Microfrontend[] = [];
     const otherModels: WebComponentMicrofrontend[] = [];
     const dashboardTileModels: DashboardTileMicrofrontend[] = [];
@@ -52,14 +54,9 @@ export class MenuUtils {
       data: { importName: model.importName, elementName: model.elementName },
     }));
 
-    const homeRoute = {
-      path: 'home',
-      component: HomeComponent,
-    };
-
     this.registry = this.buildRegistry(otherModels);
 
-    return [homeRoute, ...lazyRoutes, ...otherRoutes, ...appRoutes];
+    return [...lazyRoutes, ...otherRoutes, ...appRoutes];
   };
 
   buildRegistry = (options: WebComponentMicrofrontend[]): any => {

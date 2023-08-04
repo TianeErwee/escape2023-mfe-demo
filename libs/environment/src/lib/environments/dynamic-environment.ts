@@ -1,5 +1,5 @@
+import { MenuMicrofrontendModel } from '@bbd-mfe-new/models';
 import { AuthConfig } from 'angular-oauth2-oidc';
-import { MenuMicrofrontendModel } from '../app/models/microfrontend';
 
 declare const window: any;
 

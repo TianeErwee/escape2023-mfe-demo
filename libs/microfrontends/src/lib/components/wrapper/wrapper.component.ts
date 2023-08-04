@@ -5,7 +5,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuUtils } from '../../menu-utils';
+import { MenuUtils } from '../../utils/menu-utils';
 
 @Component({
   template: '<div #vc></div> <div *ngIf="showConstruction"> Page is under construction </div>',

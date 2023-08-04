@@ -4,10 +4,9 @@ import { Router, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { AppInitService } from './app-init.service';
-import { LookupService } from './microfrontends/lookup.service';
-import { MenuUtils } from '../utils/menu-utils';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { LookupService, MenuUtils } from '@bbd-mfe-new/microfrontends';
 
 export function INIT_APP(
   appLoadService: AppInitService,
@@ -16,7 +15,7 @@ export function INIT_APP(
 ) {
   return async () => {
     await appLoadService.init();
-    const routes = await lookupService.initialise();
+    const routes = await lookupService.initialise(appRoutes);
     console.log(routes);
     return router.resetConfig(routes);
   };
@@ -28,7 +27,7 @@ export function INIT_APP(
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   providers: [
     AppInitService,
@@ -38,8 +37,8 @@ export function INIT_APP(
       deps: [AppInitService, LookupService, Router],
       multi: true,
     },
-    MenuUtils
+    MenuUtils,
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
