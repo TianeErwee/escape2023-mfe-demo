@@ -1,0 +1,57 @@
+{
+    "count": 41,
+    "next": "https://rebrickable.com/api/v3/lego/sets/?page=2&page_size=5&theme_id=721",
+    "previous": null,
+    "results": [
+        {
+            "set_num": "010423-1",
+            "name": "The Majestic Horse",
+            "year": 2023,
+            "theme_id": 721,
+            "num_parts": 0,
+            "set_img_url": "https://cdn.rebrickable.com/media/sets/010423-1/119487.jpg",
+            "set_url": "https://rebrickable.com/sets/010423-1/the-majestic-horse/",
+            "last_modified_dt": "2023-04-03T14:52:47.187291Z"
+        },
+        {
+            "set_num": "10273-1",
+            "name": "Haunted House",
+            "year": 2020,
+            "theme_id": 721,
+            "num_parts": 3232,
+            "set_img_url": "https://cdn.rebrickable.com/media/sets/10273-1/62201.jpg",
+            "set_url": "https://rebrickable.com/sets/10273-1/haunted-house/",
+            "last_modified_dt": "2022-06-08T09:17:59.157440Z"
+        },
+        {
+            "set_num": "10274-1",
+            "name": "ECTO-1",
+            "year": 2020,
+            "theme_id": 721,
+            "num_parts": 2352,
+            "set_img_url": "https://cdn.rebrickable.com/media/sets/10274-1/75167.jpg",
+            "set_url": "https://rebrickable.com/sets/10274-1/ecto-1/",
+            "last_modified_dt": "2022-06-09T04:36:47.862698Z"
+        },
+        {
+            "set_num": "10276-1",
+            "name": "Colosseum",
+            "year": 2020,
+            "theme_id": 721,
+            "num_parts": 9036,
+            "set_img_url": "https://cdn.rebrickable.com/media/sets/10276-1/75458.jpg",
+            "set_url": "https://rebrickable.com/sets/10276-1/colosseum/",
+            "last_modified_dt": "2022-06-08T09:17:49.127687Z"
+        },
+        {
+            "set_num": "10277-1",
+            "name": "Crocodile Locomotive",
+            "year": 2020,
+            "theme_id": 721,
+            "num_parts": 1279,
+            "set_img_url": "https://cdn.rebrickable.com/media/sets/10277-1/68072.jpg",
+            "set_url": "https://rebrickable.com/sets/10277-1/crocodile-locomotive/",
+            "last_modified_dt": "2022-06-08T09:18:06.055969Z"
+        }
+    ]
+}

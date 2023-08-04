@@ -1,9 +1,45 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SetListResponse } from '../../models/set.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RebrickableApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getSets(
+    page: number,
+    page_size: number,
+    ordering: string,
+    search: string,
+    theme_id?: number,
+    min_year?: number,
+    max_year?: number,
+    min_parts?: number,
+    max_parts?: number
+  ): Observable<SetListResponse> {
+    const queryParams: { [key: string]: any } = {
+      page,
+      page_size,
+      ordering,
+      search,
+      theme_id,
+      min_year,
+      max_year,
+      min_parts,
+      max_parts,
+    };
+    let queryString = '';
+    Object.keys(queryParams).forEach((key) => {
+      if (queryParams[key]) {
+        queryString += `${key}=${queryParams[key]}&`;
+      }
+    });
+
+    return this.http.get<SetListResponse>(`/api/v3/lego/sets/?${queryString}`, {
+      headers: { Authorization: 'key 5519c5d9ddf224d5ad41c4a15d5e1ba1' },
+    });
+  }
 }

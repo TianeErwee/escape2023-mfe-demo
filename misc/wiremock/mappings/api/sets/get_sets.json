@@ -1,0 +1,16 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/api/v3/lego/sets/"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Set-Cookie": ["session_id=91837492837; split_test_group=B"],
+        "Cache-Control": "no-cache"
+      },
+      "bodyFileName": "../__files/sets/get_sets_response_page_1.json"
+    }
+  }
+  

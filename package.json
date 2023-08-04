@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve dashboard --port 4200"
+    "start": "nx serve dashboard --port 4200",
+    "wiremock": "docker-compose -f ./misc/wiremock/docker-compose.wiremock.yml up"
   },
   "private": true,
   "dependencies": {
