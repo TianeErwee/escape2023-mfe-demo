@@ -1,0 +1,7 @@
+<div class="dashboard-tiles-container">
+    <mat-card class="dashboard-tile" *ngFor="let mfe of dashboardMfes" appearance="outlined">
+        <mat-card-content>
+            <bbd-mfe-new-dashboard-tile [mfe]="mfe"></bbd-mfe-new-dashboard-tile>
+        </mat-card-content>
+    </mat-card>
+</div>

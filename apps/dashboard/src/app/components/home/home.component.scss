@@ -1,0 +1,10 @@
+.dashboard-tiles-container {
+    display: flex;
+    flex-direction: row;
+
+    .dashboard-tile {
+        border: 1px solid #ccc;
+        display: flex;
+        margin: 12px;
+    }
+}

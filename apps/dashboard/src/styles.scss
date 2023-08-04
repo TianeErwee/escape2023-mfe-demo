@@ -1,0 +1,134 @@
+@use '@angular/material' as mat;
+
+
+@include mat.core();
+
+$dark-primary-text: #02070d;
+$dark-primary-text: #02070d;
+$light-primary-text: #fff;
+
+$default-blue-primary: (
+    50: #e0e7f5,
+    100: #b3c2e6,
+    200: #8099d5,
+    300: #4d70c4,
+    400: #2652b7,
+    500: #0033aa,
+    600: #002ea3,
+    700: #002799,
+    800: #002090,
+    900: #00147f,
+    A100: #adb4ff,
+    A200: #7a85ff,
+    A400: #4757ff,
+    A700: #2d40ff,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text
+    )
+);
+
+$default-blue-accent: (
+    50: #e0ecfb,
+    100: #b3d0f6,
+    200: #80b1f0,
+    300: #4d91ea,
+    400: #267ae6,
+    500: #0062e1,
+    600: #005add,
+    700: #0050d9,
+    800: #0046d5,
+    900: #0034cd,
+    A100: #f5f7ff,
+    A200: #c2cdff,
+    A400: #8fa4ff,
+    A700: #758fff,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text
+    )
+);
+$default-red-warn: (
+    50: #fbe2e2,
+    100: #f5b6b6,
+    200: #ee8585,
+    300: #e75454,
+    400: #e12f2f,
+    500: #dc0a0a,
+    600: #d80909,
+    700: #d30707,
+    800: #ce0505,
+    900: #c50303,
+    A100: #ffeded,
+    A200: #ffbaba,
+    A400: #ff8787,
+    A700: #ff6e6e,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $dark-primary-text,
+        400: $dark-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text
+    )
+);
+
+$default-primary: mat.define-palette($default-blue-primary);
+$default-accent: mat.define-palette($default-blue-accent);
+$default-warn: mat.define-palette($default-red-warn);
+$default-typography: mat.define-typography-config(
+    $body-1: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em)
+);
+
+$default-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $default-primary,
+            accent: $default-accent,
+            warn: $default-warn
+        ),
+        typography: $default-typography
+    )
+);
+
+@include mat.all-component-themes($default-theme);
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 14px;
+}

@@ -1,0 +1,39 @@
+{
+    "menuConfig": [
+        {
+            "displayName": "Todo Tile",
+            "routerLink": "/todo",
+            "dashboardTileModel": {
+                "remoteEntry": "http://localhost:4201/remoteEntry.js",
+                "remoteName": "todo",
+                "exposedModule": "./TileComponent",
+                "routePath": "todo",
+                "routerOutletName": "todo",
+                "ngModuleName": "TileComponent"
+            }
+        },
+        {
+            "displayName": "Notes Tile",
+            "routerLink": "/notes",
+            "dashboardTileModel": {
+                "remoteEntry": "http://localhost:4202/remoteEntry.js",
+                "remoteName": "notes",
+                "exposedModule": "./TileComponent",
+                "routePath": "notes",
+                "routerOutletName": "notes",
+                "ngModuleName": "TileComponent"
+            }
+        },
+        {
+            "displayName": "Todo List",
+            "routerLink": "/todo-list",
+            "angularModel": {
+                "remoteEntry": "http://localhost:4201/remoteEntry.js",
+                "remoteName": "todo",
+                "exposedModule": "./ListModule",
+                "routePath": "todo-list",
+                "ngModuleName": "ListModule"
+            }
+        }
+    ]
+}
