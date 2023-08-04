@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/context",
+  "sourceRoot": "libs/context/src",
+  "prefix": "bbd-mfe-demo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/context"],
+      "options": {
+        "jestConfig": "libs/context/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/context/src/**/*.ts",
+          "libs/context/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

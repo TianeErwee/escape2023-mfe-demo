@@ -1,0 +1,58 @@
+{
+  "production": false,
+  "authConfig": {
+    "issuer": "https://login.microsoftonline.com/cccbf502-6b91-40d6-be02-5ffa0eb711d6/v2.0",
+    "redirectUri": "http://localhost:4200/test",
+    "clientId": "ef3cd0a7-a64e-4cfc-ae9b-a2c562a5f92e",
+    "responseType": "code",
+    "scope": "openid api://ef3cd0a7-a64e-4cfc-ae9b-a2c562a5f92e/seeka profile email",
+    "requireHttps": false,
+    "showDebugInformation": true,
+    "useSilentRefresh": false,
+    "silentRefreshTimeout": 5000,
+    "logoutUrl": "https://login.microsoftonline.com/cccbf502-6b91-40d6-be02-5ffa0eb711d6/oauth2/v2.0/logout",
+    "strictDiscoveryDocumentValidation": false
+  },
+  "menuConfig": [
+    {
+      "type": "angular",
+      "angularModel": {
+        "remoteEntry": "http://localhost:3000/remoteEntry.js",
+        "remoteName": "mfe1",
+        "exposedModule": "./Module",
+        "displayName": "Angular MFE",
+        "routePath": "mfe1",
+        "ngModuleName": "RemoteEntryModule",
+        "type": "module"
+      },
+      "otherModel": null
+    },
+    {
+      "type": "angular",
+      "angularModel": {
+        "remoteEntry": "http://localhost:4205/remoteEntry.js",
+        "remoteName": "mfe-three",
+        "exposedModule": "./Module",
+        "displayName": "Another Angular MFE",
+        "routePath": "mfe-three",
+        "ngModuleName": "RemoteEntryModule",
+        "type": "module"
+      },
+      "otherModel": null
+    },
+    {
+      "type": "other",
+      "angularModel": null,
+      "otherModel": {
+        "remoteEntry": "http://localhost:4204/remoteEntry.js",
+        "remoteName": "mfe2",
+        "exposedModule": "./web-components",
+        "displayName": "React MFE",
+        "routePath": "mfe2",
+        "matcher": "mfe2",
+        "importName": "mfe2",
+        "elementName": "mfe2-element"
+      }
+    }
+  ]
+}

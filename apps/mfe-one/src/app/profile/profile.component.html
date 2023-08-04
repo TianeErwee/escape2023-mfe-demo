@@ -1,0 +1,24 @@
+<mat-card>
+      <div>
+    <h3>Here in the Micro Frontend one application...</h3>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+<div>
+    <p><strong>First Name: </strong> {{profile?.givenName}}</p>
+    <p><strong>Last Name: </strong> {{profile?.surname}}</p>
+    <p><strong>Email: </strong> {{profile?.userPrincipalName}}</p>
+    <p><strong>Id: </strong> {{profile?.id}}</p>
+</div>
+</mat-card>
+
+<mat-card>
+  <div>
+    <h3>Shared context between MFE1 and MFE3</h3>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+<div>
+  <span>Context: {{contextService.myContextWord}}</span>
+</div>
+</mat-card>

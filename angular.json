@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "projects": {
+    "context": "libs/context",
+    "mfe-one": "apps/mfe-one",
+    "mfe-one-e2e": "apps/mfe-one-e2e",
+    "mfe-three": "apps/mfe-three",
+    "mfe-three-e2e": "apps/mfe-three-e2e",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e"
+  }
+}
