@@ -1,7 +1,7 @@
 {
     "request": {
       "method": "GET",
-      "url": "/api/v3/lego/sets/"
+      "urlPathPattern": "/api/v3/lego/sets/"
     },
     "response": {
       "status": 200,

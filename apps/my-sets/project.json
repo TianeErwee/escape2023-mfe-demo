@@ -1,26 +1,23 @@
 {
-  "name": "notes",
+  "name": "my-sets",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "bbd-mfe-new",
-  "sourceRoot": "apps/notes/src",
+  "sourceRoot": "apps/my-sets/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/notes",
-        "index": "apps/notes/src/index.html",
-        "main": "apps/notes/src/main.ts",
+        "outputPath": "dist/apps/my-sets",
+        "index": "apps/my-sets/src/index.html",
+        "main": "apps/my-sets/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/notes/tsconfig.app.json",
-        "assets": ["apps/notes/src/favicon.ico", "apps/notes/src/assets"],
-        "styles": ["apps/notes/src/styles.scss"],
-        "scripts": [],
-        "customWebpackConfig": {
-          "path": "apps/notes/webpack.config.js"
-        }
+        "tsConfig": "apps/my-sets/tsconfig.app.json",
+        "assets": ["apps/my-sets/src/favicon.ico", "apps/my-sets/src/assets"],
+        "styles": ["apps/my-sets/src/styles.scss"],
+        "scripts": []
       },
       "configurations": {
         "production": {
@@ -52,14 +49,14 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "port": 4202
+        "port": 4203
       },
       "configurations": {
         "production": {
-          "browserTarget": "notes:build:production"
+          "browserTarget": "my-sets:build:production"
         },
         "development": {
-          "browserTarget": "notes:build:development",
+          "browserTarget": "my-sets:build:development",
           "proxyConfig": "proxy.conf.json"
         }
       },
@@ -68,21 +65,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "notes:build"
+        "browserTarget": "my-sets:build"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/notes/**/*.ts", "apps/notes/**/*.html"]
+        "lintFilePatterns": ["apps/my-sets/**/*.ts", "apps/my-sets/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/notes/jest.config.ts",
+        "jestConfig": "apps/my-sets/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -95,8 +92,8 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "notes:build",
-        "port": 4202
+        "buildTarget": "my-sets:build",
+        "port": 4203
       }
     }
   }

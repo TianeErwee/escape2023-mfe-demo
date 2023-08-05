@@ -1,3 +1,7 @@
 <div *ngIf="set">
-    <div></div>
+    <div>{{ set.name}}</div>
+    <div>{{set.year}}</div>
+    <div>{{set.num_parts}}</div>
+    <div>{{set.set_num}}</div>
+    <div> <img [src]="set.set_img_url"/></div>
 </div>
