@@ -53,7 +53,8 @@
       },
       "configurations": {
         "production": {
-          "browserTarget": "my-sets:build:production"
+          "browserTarget": "my-sets:build:production",
+          "proxyConfig": "proxy-live.conf.json"
         },
         "development": {
           "browserTarget": "my-sets:build:development",

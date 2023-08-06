@@ -1,29 +1,41 @@
-<table mat-table [dataSource]="sets">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let set">{{set.name}}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="year">
-      <th mat-header-cell *matHeaderCellDef>year</th>
-      <td mat-cell *matCellDef="let set">{{set.year}}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="num_parts">
-      <th mat-header-cell *matHeaderCellDef>num_parts</th>
-      <td mat-cell *matCellDef="let set">{{set.num_parts}}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="set_num">
-      <th mat-header-cell *matHeaderCellDef>set_num</th>
-      <td mat-cell *matCellDef="let set">{{set.set_num}}</td>
-    </ng-container>
+<table *ngIf="sets$ | async as sets" mat-table [dataSource]="sets.results">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let set">{{ set.name }}</td>
+  </ng-container>
 
-    <ng-container matColumnDef="img">
-      <th mat-header-cell *matHeaderCellDef>img</th>
-      <td mat-cell *matCellDef="let set"><img class="set-image" [src]="set.set_img_url"/></td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef>year</th>
+    <td mat-cell *matCellDef="let set">{{ set.year }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="num_parts">
+    <th mat-header-cell *matHeaderCellDef>num_parts</th>
+    <td mat-cell *matCellDef="let set">{{ set.num_parts }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="set_num">
+    <th mat-header-cell *matHeaderCellDef>set_num</th>
+    <td mat-cell *matCellDef="let set">{{ set.set_num }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="img">
+    <th mat-header-cell *matHeaderCellDef>img</th>
+    <td mat-cell *matCellDef="let set">
+      <img class="set-image" [src]="set.set_img_url" />
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="setClickedEvent(row)"></tr>
+</table>
+
+<mat-paginator
+  [length]="(sets$ | async) ? (sets$ | async)?.count : 0"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageIndex]="pageIndex"
+  (page)="pageChanged($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

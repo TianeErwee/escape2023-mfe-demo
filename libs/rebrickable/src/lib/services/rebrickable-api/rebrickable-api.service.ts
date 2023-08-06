@@ -33,7 +33,7 @@ export class RebrickableApiService {
     };
     let queryString = '';
     Object.keys(queryParams).forEach((key) => {
-      if (queryParams[key]) {
+      if (queryParams[key] !== undefined && queryParams[key] !== null) {
         queryString += `${key}=${queryParams[key]}&`;
       }
     });

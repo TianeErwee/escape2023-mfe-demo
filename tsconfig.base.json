@@ -18,7 +18,8 @@
       "@bbd-mfe-new/environment": ["libs/environment/src/index.ts"],
       "@bbd-mfe-new/microfrontends": ["libs/microfrontends/src/index.ts"],
       "@bbd-mfe-new/models": ["libs/models/src/index.ts"],
-      "@bbd-mfe-new/rebrickable": ["libs/rebrickable/src/index.ts"]
+      "@bbd-mfe-new/rebrickable": ["libs/rebrickable/src/index.ts"],
+      "@bbd-mfe-new/store": ["libs/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

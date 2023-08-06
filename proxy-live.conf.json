@@ -1,0 +1,7 @@
+{
+    "/api": {
+        "target": "https://rebrickable.com",
+        "secure": true,
+        "changeOrigin": true
+    }
+}
