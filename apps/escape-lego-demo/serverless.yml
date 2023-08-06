@@ -29,10 +29,75 @@ provider:
   stage: ${self:custom.stage}
   endpointType: regional
   timeout: 20
+  region: eu-west-1
+  profile: escape
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - { "Fn::GetAtt": [ "InventoryUsers", "Arn" ] }
+        - { "Fn::GetAtt": [ "LegoSetsInventory", "Arn" ] }
+        - { "Fn::GetAtt": [ "LegoSetsWishlist", "Arn" ] }
   environment:
     APP_ENV: ${self:custom.stage}
     IS_PRODUCTION: ${param:production}
     NODE_OPTIONS: --enable-source-maps
+  
+resources:
+  Resources:
+    LegoSetsWishlist:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: wishlist_id
+            AttributeType: S
+          -
+            AttributeName: user_id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: wishlist_id
+            KeyType: HASH
+          -
+            AttributeName: user_id
+            KeyType: RANGE
+        TableName: lego-set-wishlist
+        BillingMode: 'PAY_PER_REQUEST'
+
+    LegoSetsInventory:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: user_id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: user_id
+            KeyType: HASH
+        TableName: lego-set-inventory
+        BillingMode: 'PAY_PER_REQUEST'
+
+    InventoryUsers:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: user_id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: user_id
+            KeyType: HASH
+        TableName: inventory-users
+        BillingMode: 'PAY_PER_REQUEST'
 
 functions:
   foo:
@@ -47,3 +112,9 @@ functions:
       - http:
           method: GET
           path: /getsets
+  add-to-inventory:
+    handler: src/handlers/add-to-inventory.handler
+    events:
+      - http:
+          method: POST
+          path: /add-to-inventory

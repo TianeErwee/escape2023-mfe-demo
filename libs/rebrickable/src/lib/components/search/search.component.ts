@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetTableComponent } from '../set-table/set-table.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { SetListResponse } from '@bbd-mfe-new/models';
+import { Set } from '@bbd-mfe-new/models';
 
 @Component({
   selector: 'bbd-mfe-new-search',
@@ -30,6 +31,9 @@ import { SetListResponse } from '@bbd-mfe-new/models';
 })
 export class SearchComponent {
   @ViewChild('setTable') setTable!: SetTableComponent;
+
+  @Output() setClicked = new EventEmitter<Set>();
+  
   searchFieldValue = '';
 
   years = Array.from({ length: 2025 - 1951 }, (_, i) => 1950 + i);
@@ -58,5 +62,9 @@ export class SearchComponent {
       this.startYear.value,
       this.endYear.value
     );
+  }
+
+  onSetClicked(set: Set): void {
+    this.setClicked.emit(set);
   }
 }
