@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Set, SetListResponse } from '../../models/set.model';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
+import { SetListResponse, Set } from '@bbd-mfe-new/models';
 
 @Component({
   selector: 'bbd-mfe-new-set-table',

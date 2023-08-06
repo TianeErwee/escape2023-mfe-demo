@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Set } from '../../models/set.model';
-
+import { Set } from '@bbd-mfe-new/models';
 @Component({
   selector: 'bbd-mfe-new-set-table-row',
   standalone: true,

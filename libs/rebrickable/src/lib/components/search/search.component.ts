@@ -9,8 +9,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { RebrickableApiService } from '../../services/rebrickable-api/rebrickable-api.service';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
-import { SetListResponse } from '../../models/set.model';
 import { MatButtonModule } from '@angular/material/button';
+import { SetListResponse } from '@bbd-mfe-new/models';
 
 @Component({
   selector: 'bbd-mfe-new-search',

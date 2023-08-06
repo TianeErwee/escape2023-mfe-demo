@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SetListResponse } from '../../models/set.model';
+import { SetListResponse } from '@bbd-mfe-new/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -38,8 +38,6 @@ export class RebrickableApiService {
       }
     });
 
-    return this.http.get<SetListResponse>(`/api/v3/lego/sets/?${queryString}`, {
-      headers: { Authorization: 'key 5519c5d9ddf224d5ad41c4a15d5e1ba1' },
-    });
+    return this.http.get<SetListResponse>(`/getsets?${queryString}`);
   }
 }
