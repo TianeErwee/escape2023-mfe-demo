@@ -10,9 +10,5 @@ export const appRoutes: Route[] = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'missing',
-    loadChildren: () => import('./components/missing-microfrontend/missing-microfrontend.module').then(m => m.MissingMicrofrontendModule)
   }
 ];

@@ -8,10 +8,17 @@ import { Set } from '@bbd-mfe-new/models';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.getInventory();
+  }
 
   addSetToInventory(set: Set): void {
-    this.http.post('/add-to-inventory', { user_id: '12345', set }).subscribe();
+    this.http.post('/api/add-to-inventory', { user_id: '12345', set });
+  }
+
+  getInventory(): void {
+    this.http.get('/api/get-inventory?user_id=12345').subscribe((result) => {
+      console.log('Inventory retrieved', result);
+    });
   }
 }

@@ -1,5 +1,5 @@
 {
-    "/": {
+    "/api": {
         "target": "https://rrxo2mbas0.execute-api.eu-west-1.amazonaws.com/dev",
         "secure": true,
         "changeOrigin": true

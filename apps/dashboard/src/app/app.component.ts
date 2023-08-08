@@ -17,6 +17,7 @@ export class AppComponent {
         this.links.push(configItem.path);
       }
     }
+    this.activeLink = this.links[0];
   }
 
   navigateToLink(link: string) {

@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { RebrickableApiService } from '../../services/rebrickable-api/rebrickable-api.service';
 import { PageEvent } from '@angular/material/paginator';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { SetListResponse } from '@bbd-mfe-new/models';
 import { Set } from '@bbd-mfe-new/models';
@@ -33,7 +33,7 @@ export class SearchComponent {
   @ViewChild('setTable') setTable!: SetTableComponent;
 
   @Output() setClicked = new EventEmitter<Set>();
-  
+
   searchFieldValue = '';
 
   years = Array.from({ length: 2025 - 1951 }, (_, i) => 1950 + i);
@@ -51,17 +51,19 @@ export class SearchComponent {
   constructor(private rebrickableApiService: RebrickableApiService) {}
 
   search(pageEvent?: PageEvent): void {
-    console.log(pageEvent);
+    console.log('SEARCH CALLED', pageEvent);
     const page = pageEvent ? pageEvent.pageIndex + 1 : 1;
-    this.sets$ = this.rebrickableApiService.getSets(
-      page,
-      this.pageSize,
-      'asc',
-      this.searchFieldValue,
-      undefined,
-      this.startYear.value,
-      this.endYear.value
-    );
+    this.sets$ = this.rebrickableApiService
+      .getSets(
+        page,
+        this.pageSize,
+        'asc',
+        this.searchFieldValue,
+        undefined,
+        this.startYear.value,
+        this.endYear.value
+      )
+      .pipe(shareReplay({ refCount: true }));
   }
 
   onSetClicked(set: Set): void {

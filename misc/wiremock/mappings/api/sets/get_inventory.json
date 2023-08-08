@@ -1,7 +1,7 @@
 {
     "request": {
       "method": "GET",
-      "urlPathPattern": "/getsets"
+      "urlPathPattern": "/get-inventory"
     },
     "response": {
       "status": 200,
@@ -10,7 +10,7 @@
         "Set-Cookie": ["session_id=91837492837; split_test_group=B"],
         "Cache-Control": "no-cache"
       },
-      "bodyFileName": "../__files/sets/get_sets_response_page_1.json"
+      "bodyFileName": "../__files/sets/get_inventory_response.json"
     }
   }
   

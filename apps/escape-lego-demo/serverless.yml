@@ -99,6 +99,84 @@ resources:
         TableName: inventory-users
         BillingMode: 'PAY_PER_REQUEST'
 
+    DashboardS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: tiane-escape-dashboard-app
+
+    InventoryS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: tiane-escape-inventory-app
+
+    WishlistS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: tiane-escape-wishlist-app
+
+    DashboardDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Comment: Dashboard Distribution
+          Enabled: true
+          DefaultCacheBehavior:
+            TargetOriginId: DashboardS3Origin
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          Origins:
+            - Id: DashboardS3Origin
+              DomainName: !GetAtt DashboardS3Bucket.DomainName
+              S3OriginConfig:
+                OriginAccessIdentity: ''
+          DefaultRootObject: index.html
+          PriceClass: PriceClass_100
+
+    InventoryDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Comment: Inventory Distribution
+          Enabled: true
+          DefaultCacheBehavior:
+            TargetOriginId: InventoryS3Origin
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          Origins:
+            - Id: InventoryS3Origin
+              DomainName: !GetAtt InventoryS3Bucket.DomainName
+              S3OriginConfig:
+                OriginAccessIdentity: ''
+          DefaultRootObject: index.html
+          PriceClass: PriceClass_100
+
+    WishlistDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Comment: Wishlist Distribution
+          Enabled: true
+          DefaultCacheBehavior:
+            TargetOriginId: WishlistS3Origin
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          Origins:
+            - Id: WishlistS3Origin
+              DomainName: !GetAtt WishlistS3Bucket.DomainName
+              S3OriginConfig:
+                OriginAccessIdentity: ''
+          DefaultRootObject: index.html
+          PriceClass: PriceClass_100
+    
 functions:
   foo:
     handler: src/handlers/foo.handler
@@ -111,16 +189,22 @@ functions:
     events:
       - http:
           method: GET
-          path: /getsets
+          path: /api/getsets
   add-to-inventory:
     handler: src/handlers/add-to-inventory.handler
     events:
       - http:
           method: POST
-          path: /add-to-inventory
+          path: /api/add-to-inventory
   add-user:
     handler: src/handlers/add-user.handler
     events:
       - http:
           method: POST
-          path: /add-user
+          path: /api/add-user
+  get-inventory:
+    handler: src/handlers/get-inventory.handler
+    events:
+      - http:
+          method: GET
+          path: /api/get-inventory

@@ -7,7 +7,8 @@ import { AppInitService } from './app-init.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LookupService, MenuUtils } from '@bbd-mfe-new/microfrontends';
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export function INIT_APP(
   appLoadService: AppInitService,
   lookupService: LookupService,
@@ -28,6 +29,8 @@ export function INIT_APP(
     RouterModule.forRoot(appRoutes),
     MatCardModule,
     MatTabsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     AppInitService,

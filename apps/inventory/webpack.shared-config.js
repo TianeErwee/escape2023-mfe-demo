@@ -18,10 +18,10 @@ exports.sharedDependencies = {
     singleton: true,
     strictVersion: true,
     requiredVersion: 'auto',
-  }
+  },
 };
 
 exports.sharedExposedModules = {
-  './TileComponent': 'apps/my-sets/src/app/tile/tile.component.ts',
-  './ListModule': 'apps/my-sets/src/app/list/list.module.ts',
+  './TileComponent': 'apps/inventory/src/app/tile/tile.component.ts',
+  './ListModule': 'apps/inventory/src/app/list/list.module.ts',
 };

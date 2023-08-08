@@ -56,7 +56,7 @@ export class MenuUtils {
 
     this.registry = this.buildRegistry(otherModels);
 
-    return [...lazyRoutes, ...otherRoutes, ...appRoutes];
+    return [...appRoutes, ...lazyRoutes, ...otherRoutes];
   };
 
   buildRegistry = (options: WebComponentMicrofrontend[]): any => {

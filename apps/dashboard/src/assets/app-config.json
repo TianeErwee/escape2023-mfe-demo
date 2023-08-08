@@ -1,37 +1,25 @@
 {
     "menuConfig": [
         {
-            "displayName": "Todo Tile",
-            "routerLink": "/todo",
+            "displayName": "Inventory Tile",
+            "routerLink": "/inventory",
             "dashboardTileModel": {
-                "remoteEntry": "http://localhost:4201/remoteEntry.js",
-                "remoteName": "todo",
+                "remoteEntry": "http://localhost:4203/remoteEntry.js",
+                "remoteName": "inventory",
                 "exposedModule": "./TileComponent",
-                "routePath": "todo",
-                "routerOutletName": "todo",
+                "routePath": "inventory",
+                "routerOutletName": "inventory",
                 "ngModuleName": "TileComponent"
             }
         },
         {
-            "displayName": "Notes Tile",
-            "routerLink": "/notes",
-            "dashboardTileModel": {
-                "remoteEntry": "http://localhost:4202/remoteEntry.js",
-                "remoteName": "notes",
-                "exposedModule": "./TileComponent",
-                "routePath": "notes",
-                "routerOutletName": "notes",
-                "ngModuleName": "TileComponent"
-            }
-        },
-        {
-            "displayName": "Todo List",
-            "routerLink": "/todo-list",
+            "displayName": "Inventory List",
+            "routerLink": "/inventory-list",
             "angularModel": {
-                "remoteEntry": "http://localhost:4201/remoteEntry.js",
-                "remoteName": "todo",
+                "remoteEntry": "http://localhost:4203/remoteEntry.js",
+                "remoteName": "inventory",
                 "exposedModule": "./ListModule",
-                "routePath": "todo-list",
+                "routePath": "inventory-list",
                 "ngModuleName": "ListModule"
             }
         }
