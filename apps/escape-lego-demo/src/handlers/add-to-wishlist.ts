@@ -26,8 +26,9 @@ export const handler = async (event: any, context: any) => {
   const set = requestBody.set;
 
   const input = {
-    TableName: 'lego-set-inventory',
+    TableName: 'lego-set-wishlist',
     Key: {
+      wishlist_id: requestBody.wishlist_id,
       user_id: requestBody.user_id,
     },
     UpdateExpression: 'SET #sets = list_append(#sets, :set)',
@@ -37,7 +38,6 @@ export const handler = async (event: any, context: any) => {
     ExpressionAttributeValues: {
       ':set': [set],
     },
-
   };
 
   try {

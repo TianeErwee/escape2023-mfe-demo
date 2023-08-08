@@ -118,3 +118,9 @@ functions:
       - http:
           method: POST
           path: /add-to-inventory
+  add-user:
+    handler: src/handlers/add-user.handler
+    events:
+      - http:
+          method: POST
+          path: /add-user
