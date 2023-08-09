@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { SpinnerService } from '@bbd-mfe-new/block-ui';
+import { filter, tap } from 'rxjs';
 
 @Component({
   selector: 'bbd-mfe-new-root',
@@ -11,13 +13,29 @@ export class AppComponent {
   links: string[] = [];
   activeLink = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private spinnerService: SpinnerService) {
     for (const configItem of router.config) {
-      if (configItem.path && configItem.path !== "") {
+      if (
+        configItem.path &&
+        configItem.path !== '' &&
+        configItem.path !== 'missing'
+      ) {
         this.links.push(configItem.path);
       }
     }
     this.activeLink = this.links[0];
+
+    router.events
+      .pipe(
+        tap((event) => {
+          if (event instanceof NavigationStart) {
+            this.spinnerService.showSpinner();
+          } else {
+            this.spinnerService.hideSpinner();
+          }
+        })
+      )
+      .subscribe();
   }
 
   navigateToLink(link: string) {

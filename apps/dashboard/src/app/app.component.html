@@ -1,7 +1,10 @@
-<nav mat-tab-nav-bar [tabPanel]="tabPanel" [backgroundColor]="'primary'" [mat-stretch-tabs]="false">
+<nav class="nav-bar" mat-tab-nav-bar [tabPanel]="tabPanel" [backgroundColor]="'primary'" [mat-stretch-tabs]="false">
     <a mat-tab-link *ngFor="let link of links" (click)="navigateToLink(link)" [active]="activeLink === link"> {{link}}
     </a>
+    <div class="profile-name">Tiane Erwee</div>
+    <div class="profile-pic"></div>
 </nav>
 <mat-tab-nav-panel #tabPanel>
+    <bbd-mfe-new-spinner></bbd-mfe-new-spinner>
     <router-outlet></router-outlet>
 </mat-tab-nav-panel>

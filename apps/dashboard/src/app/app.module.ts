@@ -9,6 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { LookupService, MenuUtils } from '@bbd-mfe-new/microfrontends';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from '@bbd-mfe-new/block-ui';
+
 export function INIT_APP(
   appLoadService: AppInitService,
   lookupService: LookupService,
@@ -31,6 +33,7 @@ export function INIT_APP(
     MatTabsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    SpinnerComponent
   ],
   providers: [
     AppInitService,

@@ -31,7 +31,7 @@ export const mfeAvailableGuard: CanMatchFn = (
           const group = new UrlSegmentGroup([], {
             primary: new UrlSegmentGroup(seg, {}),
           });
-          const tree: UrlTree = new UrlTree(group);
+          const tree: UrlTree = new UrlTree(group, { path: menuItem.routerLink });
           return tree;
         });
     } else {

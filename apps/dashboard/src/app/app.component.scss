@@ -1,0 +1,39 @@
+.nav-bar {
+    height: 64px;
+
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('/assets/propic.jpg');
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: 6px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px #ccc;
+        transition: all 0.5s ease;
+        &:hover {
+          box-shadow: 0 0 5px #000;
+        }
+    }
+
+    .profile-name {
+        margin: auto 8px auto auto;
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    ::ng-deep .mat-mdc-tab-links {
+        height: 100%;
+    }
+
+    ::ng-deep .mat-mdc-tab-link.mdc-tab {
+        height: 100%;
+    }
+}
