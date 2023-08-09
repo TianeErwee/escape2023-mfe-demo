@@ -5,10 +5,17 @@ export const appRoutes: Route[] = [
   {
     pathMatch: 'full',
     path: '',
-    redirectTo: 'home'
+    redirectTo: 'home',
   },
   {
     path: 'home',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
+  {
+    path: 'missing',
+    loadChildren: () =>
+      import('@bbd-mfe-new/missing-microfrontend').then(
+        (m) => m.MissingMicrofrontendModule
+      ),
+  },
 ];
