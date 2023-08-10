@@ -1,7 +1,7 @@
 {
     "request": {
       "method": "GET",
-      "urlPathPattern": "/getsets"
+      "urlPathPattern": "/api/getsets"
     },
     "response": {
       "status": 200,

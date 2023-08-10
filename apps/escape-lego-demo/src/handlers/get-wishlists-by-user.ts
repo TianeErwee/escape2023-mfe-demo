@@ -1,5 +1,5 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { UpdateCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
+import { GetCommand, DynamoDBDocumentClient,  } from '@aws-sdk/lib-dynamodb';
 
 const marshallOptions = {
   // Whether to automatically convert empty strings, blobs, and sets to `null`.
@@ -21,38 +21,29 @@ const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client, translateConfig);
 
 export const handler = async (event: any, context: any) => {
-  const requestBody = JSON.parse(event.body);
-  console.log(requestBody);
-  const set = requestBody.set;
+  const requestQuery = event.queryStringParameters;
+  console.log(requestQuery);
 
   const input = {
     TableName: 'lego-set-wishlist',
     Key: {
-      wishlist_id: requestBody.wishlist_id,
-      user_id: requestBody.user_id,
-    },
-    UpdateExpression: 'SET #sets = list_append(#sets, :set)',
-    ExpressionAttributeNames: {
-      '#sets': 'sets',
-    },
-    ExpressionAttributeValues: {
-      ':set': [set],
-    },
+      user_id: requestQuery.user_id,
+    }
   };
 
   try {
-    const result = await docClient.send(new UpdateCommand(input));
+    const result = await docClient.send(new GetCommand(input));
     console.log(result);
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Item added to wishlist' }),
+      body: JSON.stringify(result.Item),
     };
   } catch (error) {
     console.error(error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Error adding item to wishlist' }),
+      body: JSON.stringify({ message: 'Error adding item to inventory' }),
     };
   }
 };

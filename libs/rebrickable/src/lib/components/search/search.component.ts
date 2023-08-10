@@ -41,8 +41,8 @@ export class SearchComponent {
     return { value: year, viewValue: year };
   });
 
-  startYear = this.yearOptions[0];
-  endYear = this.yearOptions[this.yearOptions.length - 1];
+  startYear = this.yearOptions[0].value;
+  endYear = this.yearOptions[this.yearOptions.length - 1].value;
 
   pageSize = 10;
 
@@ -51,6 +51,7 @@ export class SearchComponent {
   constructor(private rebrickableApiService: RebrickableApiService) {}
 
   search(pageEvent?: PageEvent): void {
+    console.log(this.startYear);
     console.log('SEARCH CALLED', pageEvent);
     const page = pageEvent ? pageEvent.pageIndex + 1 : 1;
     this.sets$ = this.rebrickableApiService
@@ -60,8 +61,8 @@ export class SearchComponent {
         'asc',
         this.searchFieldValue,
         undefined,
-        this.startYear.value,
-        this.endYear.value
+        this.startYear,
+        this.endYear
       )
       .pipe(shareReplay({ refCount: true }));
   }

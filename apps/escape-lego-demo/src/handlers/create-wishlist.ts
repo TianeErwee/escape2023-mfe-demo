@@ -13,6 +13,7 @@ export const handler = async (event: any, context: any) => {
     Item: {
       user_id: userId,
       wishlist_id: uuidv4(),
+      wishlist_name: requestBody.wishlist_name,
       sets: []
     },
   };
@@ -25,13 +26,13 @@ export const handler = async (event: any, context: any) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'User and inventory added' }),
+      body: JSON.stringify({ message: 'Wishlist created' }),
     };
   } catch (error) {
     console.error(error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Error adding user or inventory' }),
+      body: JSON.stringify({ message: 'Error creating wishlist' }),
     };
   }
 };

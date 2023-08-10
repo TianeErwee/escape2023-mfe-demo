@@ -1,0 +1,31 @@
+.search-form {
+    background-color: white;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 248px 248px auto auto;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    'search search search button'
+    'from-year to-year . .';
+
+    &-field {
+        padding: 0 16px;
+        display: grid;
+        &.search-input {
+            grid-area: search;
+        }
+        &.from-year-input {
+            grid-area: from-year;
+        }
+        &.to-year-input {
+            grid-area: to-year;
+        }
+    }
+
+    &-button {
+        font-size: 16px;
+        display: grid;
+        grid-area: button;
+        justify-self: start;
+    }
+}

@@ -1,0 +1,116 @@
+[
+    {
+        "user_id": "12345",
+        "wishlist_id": "12345",
+        "wishlist_name": "first",
+        "sets": [
+            {
+                "last_modified_dt": "2022-05-25T08:11:08.477556Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/75335-1/bd-1/",
+                "name": "BD-1",
+                "theme_id": 158,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/75335-1/103101.jpg",
+                "num_parts": 1062,
+                "set_num": "75335-1"
+            },
+            {
+                "last_modified_dt": "2023-07-08T07:58:50.547403Z",
+                "year": 2021,
+                "set_url": "https://rebrickable.com/sets/10281-1/bonsai/",
+                "name": "Bonsai",
+                "theme_id": 721,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/10281-1/79024.jpg",
+                "num_parts": 878,
+                "set_num": "10281-1"
+            },
+            {
+                "last_modified_dt": "2022-06-09T18:40:06.433665Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/76989-1/horizon-forbidden-west-tallneck/",
+                "name": "Horizon Forbidden West: Tallneck",
+                "theme_id": 721,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/76989-1/98762.jpg",
+                "num_parts": 1222,
+                "set_num": "76989-1"
+            },
+            {
+                "last_modified_dt": "2022-10-03T04:40:38.928574Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/21333-1/the-starry-night/",
+                "name": "The Starry Night",
+                "theme_id": 576,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/21333-1/102873.jpg",
+                "num_parts": 2316,
+                "set_num": "21333-1"
+            },
+            {
+                "last_modified_dt": "2023-07-08T07:58:32.800436Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/10311-1/orchid/",
+                "name": "Orchid",
+                "theme_id": 721,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/10311-1/100717.jpg",
+                "num_parts": 608,
+                "set_num": "10311-1"
+            }
+        ]
+    },
+    {
+        "user_id": "12345",
+        "wishlist_id": "54321",
+        "wishlist_name": "second",
+        "sets": [
+            {
+                "last_modified_dt": "2022-05-25T08:11:08.477556Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/75335-1/bd-1/",
+                "name": "BD-1",
+                "theme_id": 158,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/75335-1/103101.jpg",
+                "num_parts": 1062,
+                "set_num": "75335-1"
+            },
+            {
+                "last_modified_dt": "2023-07-08T07:58:50.547403Z",
+                "year": 2021,
+                "set_url": "https://rebrickable.com/sets/10281-1/bonsai/",
+                "name": "Bonsai",
+                "theme_id": 721,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/10281-1/79024.jpg",
+                "num_parts": 878,
+                "set_num": "10281-1"
+            },
+            {
+                "last_modified_dt": "2022-06-09T18:40:06.433665Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/76989-1/horizon-forbidden-west-tallneck/",
+                "name": "Horizon Forbidden West: Tallneck",
+                "theme_id": 721,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/76989-1/98762.jpg",
+                "num_parts": 1222,
+                "set_num": "76989-1"
+            },
+            {
+                "last_modified_dt": "2022-10-03T04:40:38.928574Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/21333-1/the-starry-night/",
+                "name": "The Starry Night",
+                "theme_id": 576,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/21333-1/102873.jpg",
+                "num_parts": 2316,
+                "set_num": "21333-1"
+            },
+            {
+                "last_modified_dt": "2023-07-08T07:58:32.800436Z",
+                "year": 2022,
+                "set_url": "https://rebrickable.com/sets/10311-1/orchid/",
+                "name": "Orchid",
+                "theme_id": 721,
+                "set_img_url": "https://cdn.rebrickable.com/media/sets/10311-1/100717.jpg",
+                "num_parts": 608,
+                "set_num": "10311-1"
+            }
+        ]
+    }
+]

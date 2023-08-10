@@ -7,13 +7,14 @@ export const handler = async (event: any, context: any) => {
       (acc, key) => {
         acc += `${key}=${event.queryStringParameters[key]}&`;
         return acc;
-      }, ''
+      },
+      ''
     );
     const response = await axios.get(
-      'https://rebrickable.com/api/v3/lego/sets/?'+queryString,
+      environment.rebrickableApiEndpoint + '/sets/?' + queryString,
       {
         headers: {
-          Authorization: `key ${environment.apiKey}`
+          Authorization: `key ${environment.apiKey}`,
         },
       }
     );

@@ -178,14 +178,8 @@ resources:
           PriceClass: PriceClass_100
     
 functions:
-  foo:
-    handler: src/handlers/foo.handler
-    events:
-      - http:
-          method: GET
-          path: /foo
   getsets:
-    handler: src/handlers/getsets.handler
+    handler: src/handlers/get-sets.handler
     events:
       - http:
           method: GET
@@ -196,6 +190,18 @@ functions:
       - http:
           method: POST
           path: /api/add-to-inventory
+  add-to-wishlist:
+    handler: src/handlers/add-to-wishlist.handler
+    events:
+      - http:
+          method: POST
+          path: /api/add-to-wishlist
+  create-wishlist:
+    handler: src/handlers/create-wishlist.handler
+    events:
+      - http:
+          method: POST
+          path: /api/create-wishlist
   add-user:
     handler: src/handlers/add-user.handler
     events:
@@ -208,3 +214,9 @@ functions:
       - http:
           method: GET
           path: /api/get-inventory
+  get-wishlists-by-user:
+    handler: src/handlers/get-wishlists-by-user.handler
+    events:
+      - http:
+          method: GET
+          path: /api/get-wishlists-by-user
