@@ -1,1 +1,6 @@
-<p>tile works!</p>
+<div *ngIf="sets$ | async as sets">
+  <bbd-mfe-new-list-view
+    [title]="'My Inventory'"
+    [sets]="sets.sets"
+  ></bbd-mfe-new-list-view>
+</div>

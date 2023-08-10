@@ -1,0 +1,27 @@
+.set-container {
+  height: 200px;
+  width: 200px;
+
+  .set-image {
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .set-name {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+.sets-container {
+    display: flex;
+    flex-direction: row;
+
+    .set-card {
+        margin: 10px;
+    }
+}
