@@ -1,11 +1,21 @@
-<div *ngIf="sets" class="sets-container">
-  <mat-card class="set-card" *ngFor="let set of sets" appearance="outlined">
-    <mat-card-content>
-      <ng-container
-        *ngTemplateOutlet="setTemplate; context: { set: set }"
-      ></ng-container>
-    </mat-card-content>
-  </mat-card>
+<div class="list-container">
+  <div class="left-arrow" (click)="prev()">
+    <mat-icon>chevron_left</mat-icon>
+  </div>
+  <div *ngIf="sets" class="sets-container">
+    <ng-container *ngFor="let set of visibleSets">
+      <mat-card class="set-card" appearance="outlined">
+        <mat-card-content>
+          <ng-container
+            *ngTemplateOutlet="setTemplate; context: { set: set }"
+          ></ng-container>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+  <div class="right-arrow" (click)="next()">
+    <mat-icon>chevron_right</mat-icon>
+  </div>
 </div>
 
 <ng-template #setTemplate let-set="set">

@@ -1,13 +1,11 @@
-<mat-card-content>
-  <div #placeHolder></div>
+<div #placeHolder class="tile-placeholder"></div>
 
-  <div *ngIf="pageState === 'loading'">
-    <mat-spinner></mat-spinner>
-  </div>
-  <div *ngIf="pageState === 'error'">
-    Unable to load
-    <button id="basic" type="button" mat-button (click)="loadAndAttach()">
-      Try Again
-    </button>
-  </div>
-</mat-card-content>
+<div *ngIf="pageState === 'loading'">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="pageState === 'error'">
+  Unable to load
+  <button id="basic" type="button" mat-button (click)="loadAndAttach()">
+    Try Again
+  </button>
+</div>

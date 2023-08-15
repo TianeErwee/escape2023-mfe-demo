@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +11,52 @@ import { Set } from '@bbd-mfe-new/models';
   templateUrl: './list-view.component.html',
   styleUrls: ['./list-view.component.scss'],
 })
-export class ListViewComponent {
+export class ListViewComponent implements AfterViewInit {
   @Input() title = '';
   @Input() sets: Set[] = [];
+
+  visibleSets: Set[] = [];
+  visibleIndices: number[] = [];
+
+  ngAfterViewInit() {
+    this.visibleIndices = [0, 1, 2];
+    this.setVisibleSets();
+    console.log(this.visibleSets);
+    console.log(this.sets);
+  }
+
+  next() {
+    this.visibleIndices = this.visibleIndices.map((i) => {
+      if (i === this.sets.length - 1) {
+        return 0;
+      } else {
+        return i + 1;
+      }
+    });
+    console.log(this.visibleIndices);
+    this.visibleSets = [...this.visibleSets, this.sets[this.visibleIndices[2]]];
+    setTimeout(() => {
+      this.visibleSets.shift();
+    }, 50);
+  }
+
+  prev() {
+    this.visibleIndices = this.visibleIndices.map((i) => {
+      if (i === 0) {
+        return this.sets.length - 1;
+      } else {
+        return i - 1;
+      }
+    });
+    this.visibleSets = [this.sets[this.visibleIndices[0]], ...this.visibleSets];
+    setTimeout(() => {
+      this.visibleSets.pop();
+    }, 50);
+    // this.setVisibleSets();
+  }
+
+  private setVisibleSets() {
+    this.visibleSets = [];
+    this.visibleIndices.forEach((i) => this.visibleSets.push(this.sets[i]));
+  }
 }

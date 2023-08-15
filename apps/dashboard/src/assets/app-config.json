@@ -13,6 +13,18 @@
             }
         },
         {
+            "displayName": "Wishlist Tile",
+            "routerLink": "/wishlist",
+            "dashboardTileModel": {
+                "remoteEntry": "http://localhost:4204/remoteEntry.js",
+                "remoteName": "wishlist",
+                "exposedModule": "./TileComponent",
+                "routePath": "wishlist",
+                "routerOutletName": "wishlist",
+                "ngModuleName": "TileComponent"
+            }
+        },
+        {
             "displayName": "Inventory List",
             "routerLink": "/inventory-list",
             "angularModel": {
@@ -20,6 +32,17 @@
                 "remoteName": "inventory",
                 "exposedModule": "./ListModule",
                 "routePath": "inventory-list",
+                "ngModuleName": "ListModule"
+            }
+        },
+        {
+            "displayName": "Wishlist",
+            "routerLink": "/wish-list",
+            "angularModel": {
+                "remoteEntry": "http://localhost:4204/remoteEntry.js",
+                "remoteName": "wishlist",
+                "exposedModule": "./ListModule",
+                "routePath": "wish-list",
                 "ngModuleName": "ListModule"
             }
         }

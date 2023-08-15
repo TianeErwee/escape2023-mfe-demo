@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@bbd-mfe-new/block-ui": ["libs/block-ui/src/index.ts"],
+      "@bbd-mfe-new/cat-api": ["libs/cat-api/src/index.ts"],
       "@bbd-mfe-new/environment": ["libs/environment/src/index.ts"],
       "@bbd-mfe-new/microfrontends": ["libs/microfrontends/src/index.ts"],
       "@bbd-mfe-new/missing-microfrontend": [

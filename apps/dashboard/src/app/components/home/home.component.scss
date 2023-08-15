@@ -1,12 +1,11 @@
 .dashboard-tiles-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     .dashboard-tile {
         border: 1px solid #ccc;
         display: flex;
-        margin: 12px;
-        width: 100%;
+        margin: 12px auto;
         overflow-x: hidden;
     }
 }
