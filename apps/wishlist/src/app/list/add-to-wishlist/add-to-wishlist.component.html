@@ -1,0 +1,12 @@
+<div>
+  Which wishlist would you like to add this set to?
+  <div>
+    <img class="set-image" [src]="set.set_img_url" />
+    <div class="set-name">{{ set.name }}</div>
+  </div>
+  <div *ngFor="let list of wishlists">
+    <button mat-button (click)="addSetToWishlist(list.wishlist_id)">
+      {{ list.wishlist_name }}
+    </button>
+  </div>
+</div>

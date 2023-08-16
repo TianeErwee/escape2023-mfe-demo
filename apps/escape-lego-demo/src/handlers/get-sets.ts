@@ -23,6 +23,7 @@ export const handler = async (event: any, context: any) => {
       body: JSON.stringify(response.data),
     };
   } catch (error: any) {
+    console.error(error);
     return {
       statusCode: error.response.status,
       body: JSON.stringify(error.response.data),

@@ -1,5 +1,5 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { GetCommand, DynamoDBDocumentClient,  } from '@aws-sdk/lib-dynamodb';
+import { GetCommand, DynamoDBDocumentClient, QueryCommand, ScanCommand,  } from '@aws-sdk/lib-dynamodb';
 
 const marshallOptions = {
   // Whether to automatically convert empty strings, blobs, and sets to `null`.
@@ -23,21 +23,35 @@ const docClient = DynamoDBDocumentClient.from(client, translateConfig);
 export const handler = async (event: any, context: any) => {
   const requestQuery = event.queryStringParameters;
   console.log(requestQuery);
+  // const params = {
+  //   TableName: 'lego-set-wishlist',
+  //   KeyConditionExpression: '#user_id = :user_id',
+  //   ExpressionAttributeNames: {
+  //     '#user_id': 'user_id',
+  //   },
+  //   ExpressionAttributeValues: {
+  //     ':user_id': requestQuery.user_id,
+  //   }
+  // };
 
   const input = {
     TableName: 'lego-set-wishlist',
-    Key: {
-      user_id: requestQuery.user_id,
+    FilterExpression: '#user_id = :user_id',
+    ExpressionAttributeNames: {
+      '#user_id': 'user_id',
+    },
+    ExpressionAttributeValues: {
+      ':user_id': requestQuery.user_id,
     }
   };
 
   try {
-    const result = await docClient.send(new GetCommand(input));
+    const result = await docClient.send(new ScanCommand(input));
     console.log(result);
 
     return {
       statusCode: 200,
-      body: JSON.stringify(result.Item),
+      body: JSON.stringify(result.Items),
     };
   } catch (error) {
     console.error(error);

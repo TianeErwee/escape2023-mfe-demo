@@ -1,3 +1,37 @@
-<bbd-mfe-new-search
-  (setClicked)="addSetToInventory($event)"
-></bbd-mfe-new-search>
+<!-- <div class="create-wishlist-form">
+  <mat-form-field class="create-wishlist-form-field name-input" appearance="outline">
+    <mat-label>Wishlist name</mat-label>
+    <input matInput type="text" [(ngModel)]="wishlistName" />
+  </mat-form-field>
+
+  <div class="create-wishlist-form-button">
+    <button
+      mat-fab
+      color="accent"
+      (click)="createWishlist(wishlistName)"
+      extended
+    >
+      <mat-icon>add</mat-icon>
+      Create
+    </button>
+  </div>
+</div> -->
+
+<div class="wishlist-list" *ngIf="wishlists$ | async as wishlists">
+  <div *ngFor="let list of wishlists">
+    <div class="wishlist-card">
+      <div class="heading">{{ list.wishlist_name }}</div>
+      <bbd-mfe-new-list-view
+        *ngIf="list.sets.length > 0"
+        [title]="'My Inventory'"
+        [sets]="list.sets"
+      ></bbd-mfe-new-list-view>
+    </div>
+  </div>
+</div>
+
+<div>
+  <bbd-mfe-new-search
+    (setClicked)="addSetToWishlist($event)"
+  ></bbd-mfe-new-search>
+</div>
