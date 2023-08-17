@@ -1,1 +1,8 @@
-<p>tile works!</p>
+<div *ngIf="wishlist$ | async as wishlist">
+  <div class="heading">{{ wishlist.wishlist_name }}</div>
+  <bbd-mfe-new-list-view
+    [title]="'My Wishlist'"
+    [sets]="wishlist.sets"
+    (setClicked)="onSetClicked($event)"
+  ></bbd-mfe-new-list-view>
+</div>

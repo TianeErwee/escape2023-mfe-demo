@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve dashboard --port 4200",
-    "wiremock": "docker-compose -f ./misc/wiremock/docker-compose.wiremock.yml up"
+    "wiremock": "docker-compose -f ./misc/wiremock/docker-compose.wiremock.yml up",
+    "start:prod": "concurrently \"nx serve dashboard -c production\" \"nx serve-static wishlist\" \"nx serve-static inventory\""
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
+    "@ngxs/devtools-plugin": "^3.8.1",
     "@ngxs/store": "^3.8.1",
     "@nx/angular": "16.1.1",
     "@types/uuid": "^9.0.2",
@@ -64,6 +66,7 @@
     "@types/node": "~18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
+    "concurrently": "^8.2.0",
     "cypress": "^12.11.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",

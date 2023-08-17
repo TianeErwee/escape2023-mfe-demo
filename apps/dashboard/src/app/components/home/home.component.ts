@@ -11,8 +11,6 @@ import { environment } from '@bbd-mfe-new/environment';
 
 @Component({
   selector: 'bbd-mfe-new-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule, MatCardModule, DashboardTileComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -20,7 +18,6 @@ export class HomeComponent {
   dashboardMfes: DashboardTileMicrofrontend[] = [];
 
   constructor(private router: Router) {
-    console.log('HOME');
 
     const options = environment.menuConfig;
     options.forEach((item: MenuMicrofrontendModel) => {
@@ -28,6 +25,5 @@ export class HomeComponent {
         this.dashboardMfes.push(item.dashboardTileModel);
       }
     });
-    console.log(this.dashboardMfes);
   }
 }

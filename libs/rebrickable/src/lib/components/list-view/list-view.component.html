@@ -1,9 +1,9 @@
 <div class="list-container">
-  <div class="left-arrow" (click)="prev()">
+  <!-- <div class="left-arrow" (click)="prev()">
     <mat-icon>chevron_left</mat-icon>
-  </div>
+  </div> -->
   <div *ngIf="sets" class="sets-container">
-    <ng-container *ngFor="let set of visibleSets">
+    <ng-container *ngFor="let set of sets">
       <mat-card class="set-card" appearance="outlined">
         <mat-card-content>
           <ng-container
@@ -13,13 +13,13 @@
       </mat-card>
     </ng-container>
   </div>
-  <div class="right-arrow" (click)="next()">
+  <!-- <div class="right-arrow" (click)="next()">
     <mat-icon>chevron_right</mat-icon>
-  </div>
+  </div> -->
 </div>
 
 <ng-template #setTemplate let-set="set">
-  <div class="set-container">
+  <div class="set-container" (click)="onClick(set)">
     <img class="set-image" [src]="set.set_img_url" />
     <div class="set-name">{{ set.name }}</div>
   </div>

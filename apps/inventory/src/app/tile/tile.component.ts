@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListViewComponent } from '@bbd-mfe-new/rebrickable';
-import { HttpClient } from '@angular/common/http';
-import { Set } from '@bbd-mfe-new/models';
+import { LegoFacadeService } from '@bbd-mfe-new/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'bbd-mfe-new-tile',
   standalone: true,
-  imports: [CommonModule, ListViewComponent],
+  imports: [
+    CommonModule,
+    ListViewComponent
+  ],
+  providers: [LegoFacadeService],
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.scss'],
 })
 export class TileComponent {
-  sets$ = this.http.get<{ sets: Set[] }>('/api/get-inventory?user_id=12345');
-  constructor(private http: HttpClient) {}
+  inventory$: Observable<any>;
+  constructor(private legoFacadeService: LegoFacadeService) {
+    this.inventory$ = this.legoFacadeService.inventory$;
+    this.legoFacadeService.getInventory('12345');
+  }
 }

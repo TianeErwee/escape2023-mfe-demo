@@ -10,6 +10,14 @@ import { LookupService, MenuUtils } from '@bbd-mfe-new/microfrontends';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from '@bbd-mfe-new/block-ui';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from '@bbd-mfe-new/environment';
+import { LegoFacadeService, LegoState, StoreModule } from '@bbd-mfe-new/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { DashboardTileComponent } from './components/dashboard-tile/dashboard-tile.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HomeComponent } from './components/home/home.component';
+
 
 export function INIT_APP(
   appLoadService: AppInitService,
@@ -33,7 +41,13 @@ export function INIT_APP(
     MatTabsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    SpinnerComponent
+    SpinnerComponent,
+    NgxsModule.forRoot([], {
+      developmentMode: !environment.production,
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    StoreModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AppInitService,
@@ -44,6 +58,7 @@ export function INIT_APP(
       multi: true,
     },
     MenuUtils,
+    LegoFacadeService
   ],
   bootstrap: [AppComponent],
 })

@@ -1,7 +1,7 @@
 <div class="heading">my inventory</div>
-<div *ngIf="sets$ | async as sets">
+<div *ngIf="inventory$ | async as inventory">
   <bbd-mfe-new-list-view
     [title]="'My Inventory'"
-    [sets]="sets.sets"
+    [sets]="inventory.sets"
   ></bbd-mfe-new-list-view>
 </div>

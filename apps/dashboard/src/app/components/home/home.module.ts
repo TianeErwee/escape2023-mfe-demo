@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ListRoutingModule } from './list-routing.module';
-import { ListComponent } from './list.component';
 import {
   ListViewComponent,
   RebrickableModule,
@@ -15,17 +13,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { AddToWishlistComponent } from './add-to-wishlist/add-to-wishlist.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { LegoFacadeService, LegoState } from '@bbd-mfe-new/store';
 import { NgxsModule } from '@ngxs/store';
+import { HomeComponent } from './home.component';
+import { DashboardTileComponent } from '../dashboard-tile/dashboard-tile.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [ListComponent, AddToWishlistComponent],
+  declarations: [HomeComponent, DashboardTileComponent],
   imports: [
     CommonModule,
-    ListRoutingModule,
+    HomeRoutingModule,
     RebrickableModule,
     SetTableComponent,
     HttpClientModule,
@@ -38,8 +39,9 @@ import { NgxsModule } from '@ngxs/store';
     ListViewComponent,
     MatDialogModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     NgxsModule.forFeature([LegoState])
   ],
   providers: [LegoFacadeService]
 })
-export class ListModule {}
+export class HomeModule {}

@@ -27,16 +27,13 @@ export class SetTableComponent {
   displayedColumns: string[] = ['name', 'year', 'num_parts', 'set_num', 'img'];
 
   pageChanged(event: PageEvent): void {
-    console.log(this.pageIndex);
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
     this.pageSizeChange.emit(this.pageSize);
     this.page.emit(event);
-    console.log(this.pageIndex);
   }
 
   setClickedEvent(set: Set): void {
     this.setClicked.emit(set);
-    console.log(set);
   }
 }

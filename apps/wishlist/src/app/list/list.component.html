@@ -16,17 +16,14 @@
     </button>
   </div>
 </div> -->
-
-<div class="wishlist-list" *ngIf="wishlists$ | async as wishlists">
-  <div *ngFor="let list of wishlists">
-    <div class="wishlist-card">
-      <div class="heading">{{ list.wishlist_name }}</div>
-      <bbd-mfe-new-list-view
-        *ngIf="list.sets.length > 0"
-        [title]="'My Inventory'"
-        [sets]="list.sets"
-      ></bbd-mfe-new-list-view>
-    </div>
+<div class="wishlist-list" *ngIf="wishlist$ | async as wishlist">
+  <div class="wishlist-card">
+    <div class="heading">{{ wishlist.wishlist_name }}</div>
+    <bbd-mfe-new-list-view
+      *ngIf="wishlist.sets.length > 0"
+      [title]="'My Inventory'"
+      [sets]="wishlist.sets"
+    ></bbd-mfe-new-list-view>
   </div>
 </div>
 

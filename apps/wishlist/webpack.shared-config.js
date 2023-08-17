@@ -19,6 +19,11 @@ exports.sharedDependencies = {
     strictVersion: true,
     requiredVersion: 'auto',
   },
+  '@ngxs/store': {
+    singleton: true,
+    strictVersion: true,
+    requiredVersion: 'auto',
+  }
 };
 
 exports.sharedExposedModules = {

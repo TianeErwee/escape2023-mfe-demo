@@ -21,7 +21,6 @@ export class WrapperComponent implements AfterContentInit {
   ngAfterContentInit(): void {
     const elementName = this.route.snapshot.data['elementName'];
     const importName = this.route.snapshot.data['importName'];
-    console.log('elementName', elementName);
 
     const importFn = this.menuUtils.registry[importName];
     importFn()

@@ -51,8 +51,6 @@ export class SearchComponent {
   constructor(private rebrickableApiService: RebrickableApiService) {}
 
   search(pageEvent?: PageEvent): void {
-    console.log(this.startYear);
-    console.log('SEARCH CALLED', pageEvent);
     const page = pageEvent ? pageEvent.pageIndex + 1 : 1;
     this.sets$ = this.rebrickableApiService
       .getSets(

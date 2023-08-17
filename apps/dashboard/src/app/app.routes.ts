@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 
 export const appRoutes: Route[] = [
   {
@@ -9,7 +8,8 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    loadChildren: () =>
+      import('./components/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'missing',

@@ -37,7 +37,6 @@ export class RebrickableApiService {
         queryString += `${key}=${queryParams[key]}&`;
       }
     });
-    console.log('QUERY STRING', queryString);
     return this.http.get<SetListResponse>(`/api/getsets?${queryString}`);
   }
 }
