@@ -1,3 +1,14 @@
+<div class="inventory-list" *ngIf="inventory$ | async as inventory">
+  <div class="inventory-card">
+    <div class="heading">My Inventory</div>
+    <bbd-mfe-new-list-view
+      *ngIf="inventory.sets.length > 0"
+      [title]="'My Inventory'"
+      [sets]="inventory.sets"
+    ></bbd-mfe-new-list-view>
+  </div>
+</div>
+
 <bbd-mfe-new-search
   (setClicked)="addSetToInventory($event)"
 ></bbd-mfe-new-search>

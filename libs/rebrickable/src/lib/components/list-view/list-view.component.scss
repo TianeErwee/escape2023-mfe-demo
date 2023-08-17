@@ -1,7 +1,5 @@
 .list-container {
-  display: grid;
-  grid-template-columns: 24px minmax(auto, 800px) 24px;
-  grid-template-areas: 'left-arrow list right-arrow';
+  width: 100%;
 
   .left-arrow {
     grid-area: left-arrow;
@@ -17,7 +15,6 @@
     justify-content: center;
     grid-auto-flow: column;
     margin: 0 12px;
-    overflow: hidden;
 
     .set-card {
       margin: 0 10px;
@@ -26,8 +23,8 @@
       }
     }
     .set-container {
-      height: 200px;
-      width: 200px;
+      height: 80px;
+      width: 80px;
 
       .set-image {
         height: 80%;
@@ -40,7 +37,7 @@
 
       .set-name {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 12px;
       }
     }
   }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ListRoutingModule } from './list-routing.module';
 import { ListComponent } from './list.component';
 import {
+  ListViewComponent,
   RebrickableModule,
   SearchComponent,
   SetTableComponent,
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     SetTableComponent,
     HttpClientModule,
     SearchComponent,
+    ListViewComponent
   ],
 })
 export class ListModule {}
