@@ -1,2 +1,6 @@
-<p>missing-page works!</p>
-<a *ngIf="retryRoute" [routerLink]="retryRoute">RETRY</a>
+<div class="missing-page">
+  <div class="missing-title">
+    Seems like something isn't working right now...
+  </div>
+  <button mat-button *ngIf="retryRoute" [routerLink]="retryRoute">RETRY</button>
+</div>

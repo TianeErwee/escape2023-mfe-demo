@@ -1,9 +1,9 @@
 <div #placeHolder class="tile-placeholder"></div>
 
-<div *ngIf="pageState === 'loading'">
+<div *ngIf="pageState === 'loading'" class="spinner">
   <mat-spinner></mat-spinner>
 </div>
-<div *ngIf="pageState === 'error'">
+<div *ngIf="pageState === 'error'" class="error-state">
   Unable to load
   <button id="basic" type="button" mat-button (click)="loadAndAttach()">
     Try Again

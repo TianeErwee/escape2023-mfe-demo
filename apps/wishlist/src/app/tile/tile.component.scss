@@ -1,7 +1,30 @@
 .heading {
-    font-size: 22px;
-    margin: 6px 26px 20px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #ededed;
-    text-align: center;
+  font-size: 22px;
+  margin: 6px 26px 20px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ededed;
+  text-align: center;
+}
+
+.nyan-cat {
+  height: 80px;
+  position: absolute;
+  top: 64px;
+
+  left: -150px; /* Initial position outside the left edge */
+  animation: slideInOut 10s linear infinite; /* Animation properties */
+
+  img {
+    height: 100%;
+  }
+}
+
+@keyframes slideInOut {
+  0%,
+  100% {
+    transform: translateX(-1000%); /* Move to the left edge */
+  }
+  100% {
+    transform: translateX(1000%); /* Move to the right edge */
+  }
 }

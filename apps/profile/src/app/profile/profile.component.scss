@@ -1,0 +1,54 @@
+.profile-page {
+  text-align: center;
+  background: linear-gradient(to bottom, #17071d, #000000);
+  width: 100%;
+  height: calc(100vh - 96px);
+  text-align: center;
+  padding-top: 32px;
+  overflow: hidden;
+
+  .picture-title {
+    font-size: 20px;
+    color: white;
+  }
+
+  .profile-picture {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/assets/space-cat.png);
+    margin: 12px auto;
+  }
+
+  .name-title {
+    font-size: 20px;
+    color: white;
+  }
+
+  .name {
+    font-size: 32px;
+    color: white;
+  } 
+
+  .nyan-cat {
+    height: 80px;
+    padding-top: 120px;
+    animation: slideInOut 10s linear infinite; /* Animation properties */
+
+    img {
+      height: 100%;
+    }
+  }
+
+  @keyframes slideInOut {
+    0% {
+      transform: translateX(-100%); /* Move to the left edge */
+    }
+    100% {
+      transform: translateX(500%); /* Move to the right edge */
+    }
+  }
+}

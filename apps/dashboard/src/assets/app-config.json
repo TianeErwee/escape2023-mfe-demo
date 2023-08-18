@@ -45,6 +45,17 @@
                 "routePath": "wish-list",
                 "ngModuleName": "ListModule"
             }
+        },
+        {
+            "displayName": "Profile",
+            "routerLink": "/profile",
+            "angularModel": {
+                "remoteEntry": "http://localhost:4205/remoteEntry.js",
+                "remoteName": "profile",
+                "exposedModule": "./ProfileModule",
+                "routePath": "profile",
+                "ngModuleName": "ProfileModule"
+            }
         }
     ]
 }
