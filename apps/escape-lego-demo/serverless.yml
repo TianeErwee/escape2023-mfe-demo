@@ -226,3 +226,9 @@ functions:
       - http:
           method: POST
           path: /api/move-to-inventory
+  get-cat-images:
+    handler: src/handlers/get-cat-images.handler
+    events:
+      - http:
+          method: GET
+          path: /api/get-cat-images

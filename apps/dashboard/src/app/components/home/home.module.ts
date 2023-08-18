@@ -40,8 +40,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatDialogModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    NgxsModule.forFeature([LegoState])
+    NgxsModule.forFeature([LegoState]),
   ],
-  providers: [LegoFacadeService]
+  providers: [LegoFacadeService],
 })
 export class HomeModule {}

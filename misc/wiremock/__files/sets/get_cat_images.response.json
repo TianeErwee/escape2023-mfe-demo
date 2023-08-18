@@ -1,0 +1,132 @@
+[
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "1u",
+        "url": "https://cdn2.thecatapi.com/images/1u.gif",
+        "width": 500,
+        "height": 500
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "53",
+        "url": "https://cdn2.thecatapi.com/images/53.jpg",
+        "width": 500,
+        "height": 473
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "54",
+        "url": "https://cdn2.thecatapi.com/images/54.jpg",
+        "width": 402,
+        "height": 500
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "66",
+        "url": "https://cdn2.thecatapi.com/images/66.jpg",
+        "width": 500,
+        "height": 331
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "78",
+        "url": "https://cdn2.thecatapi.com/images/78.jpg",
+        "width": 632,
+        "height": 500
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "5e8",
+        "url": "https://cdn2.thecatapi.com/images/5e8.jpg",
+        "width": 596,
+        "height": 400
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "5ei",
+        "url": "https://cdn2.thecatapi.com/images/5ei.gif",
+        "width": 499,
+        "height": 402
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "5fo",
+        "url": "https://cdn2.thecatapi.com/images/5fo.jpg",
+        "width": 500,
+        "height": 379
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "5h9",
+        "url": "https://cdn2.thecatapi.com/images/5h9.jpg",
+        "width": 499,
+        "height": 500
+    },
+    {
+        "breeds": [],
+        "categories": [
+            {
+                "id": 2,
+                "name": "space"
+            }
+        ],
+        "id": "5ht",
+        "url": "https://cdn2.thecatapi.com/images/5ht.jpg",
+        "width": 667,
+        "height": 500
+    }
+]

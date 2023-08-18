@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve dashboard --port 4200",
     "wiremock": "docker-compose -f ./misc/wiremock/docker-compose.wiremock.yml up",
+    "start:dev": "concurrently \"nx serve dashboard -c development\" \"nx serve-static wishlist\" \"nx serve-static inventory\"",
     "start:prod": "concurrently \"nx serve dashboard -c production\" \"nx serve-static wishlist\" \"nx serve-static inventory\""
   },
   "private": true,

@@ -1,0 +1,3 @@
+<div *ngIf="cats$ | async as cats" class="cat-container">
+  <img *ngFor="let cat of cats" class="cat-image" [src]="cat.url" />
+</div>

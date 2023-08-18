@@ -1,0 +1,14 @@
+.cat-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #ff3bd5;
+}
+
+.cat-image {
+  height: 120px;
+  width: 120px;
+  display: flex;
+  padding: 6px;
+}

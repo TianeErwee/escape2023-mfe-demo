@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { ListViewComponent } from '@bbd-mfe-new/rebrickable';
 import { LegoFacadeService } from '@bbd-mfe-new/store';
 import { Observable } from 'rxjs';
+import { CatApiComponent, CatApiService } from '@bbd-mfe-new/cat-api';
 
 @Component({
   selector: 'bbd-mfe-new-tile',
   standalone: true,
   imports: [
     CommonModule,
-    ListViewComponent
+    ListViewComponent,
+    CatApiComponent
   ],
-  providers: [LegoFacadeService],
+  providers: [LegoFacadeService, CatApiService],
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.scss'],
 })

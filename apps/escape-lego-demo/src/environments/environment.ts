@@ -3,6 +3,7 @@ const IS_OFFLINE = process.env['IS_OFFLINE'] === 'true';
 const BASE_URL = process.env['BASE_URL'];
 const API_KEY = process.env['API_KEY'];
 const REBRICKABLE_API_ENDPOINT = process.env['REBRICKABLE_API_ENDPOINT'];
+const CAT_API_ENDPOINT = process.env['CAT_API_ENDPOINT'];
 
 export const environment = {
   production: IS_PRODUCTION,
@@ -10,4 +11,5 @@ export const environment = {
   baseUrl: BASE_URL,
   apiKey: API_KEY,
   rebrickableApiEndpoint: REBRICKABLE_API_ENDPOINT,
+  catApiEndpoint: CAT_API_ENDPOINT,
 };

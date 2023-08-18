@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CatApiService } from '../../services/cat-api.service';
 
 @Component({
   selector: 'bbd-mfe-new-cat-api',
@@ -8,4 +9,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cat-api.component.html',
   styleUrls: ['./cat-api.component.scss'],
 })
-export class CatApiComponent {}
+export class CatApiComponent {
+
+  cats$ = this.catApiService.getImages();
+  constructor(private catApiService: CatApiService) {}
+}
