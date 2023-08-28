@@ -1,0 +1,27 @@
+{
+    "menuConfig": [
+        {
+            "displayName": "Inventory Tile",
+            "routerLink": "/inventory",
+            "dashboardTileModel": {
+                "remoteEntry": "https://d1ybyf75vsc222.cloudfront.net/remoteEntry.js",
+                "remoteName": "inventory",
+                "exposedModule": "./TileComponent",
+                "routePath": "inventory",
+                "routerOutletName": "inventory",
+                "ngModuleName": "TileComponent"
+            }
+        },
+        {
+            "displayName": "Inventory List",
+            "routerLink": "/inventory-list",
+            "angularModel": {
+                "remoteEntry": "https://d1ybyf75vsc222.cloudfront.net/remoteEntry.js",
+                "remoteName": "inventory",
+                "exposedModule": "./ListModule",
+                "routePath": "inventory-list",
+                "ngModuleName": "ListModule"
+            }
+        }
+    ]
+}
