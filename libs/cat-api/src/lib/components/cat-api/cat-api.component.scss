@@ -1,14 +1,13 @@
 .cat-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   justify-content: space-evenly;
   background-color: #ff3bd5;
 }
 
 .cat-image {
-  height: 120px;
-  width: 120px;
-  display: flex;
-  padding: 6px;
+  display: grid;
+  height: 140px;
+  width: 140px;
+  margin: 6px auto;
 }

@@ -1,7 +1,48 @@
 .heading {
-    font-size: 22px;
-    margin: 6px 26px 20px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #ededed;
-    text-align: center;
+  font-size: 22px;
+  margin: 6px 26px 20px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ededed;
+  text-align: center;
+}
+
+.aimee {
+  display: grid;
+  background-image: url('/assets/aimee.png');
+  grid-area: image;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ff3bd5;
+  margin-left: 64px;
+
+  &.reverse {
+    background-position: right;
+    grid-area: image-reverse;
+    background-image: url('/assets/aimee-reverse.png');
+    margin-right: 64px;
+    margin-left: 0px;
+  }
+}
+
+.quote {
+  font-size: 32px;
+  margin: auto;
+  display: grid;
+  grid-area: quote;
+  background-color: #ff3bd5;
+}
+.container {
+  display: grid;
+  background-color: #ff3bd5;
+
+  grid-template-rows: 100px auto;
+  grid-template-columns: 150px auto 150px;
+  grid-template-areas:
+    'image quote image-reverse'
+    'cats cats cats';
+}
+
+.cats {
+  display: grid;
+  grid-area: cats;
 }

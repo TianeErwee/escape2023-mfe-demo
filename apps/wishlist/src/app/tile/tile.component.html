@@ -1,10 +1,11 @@
-<div *ngIf="wishlist$ | async as wishlist">
-  <div class="heading">{{ wishlist.wishlist_name }}</div>
+<div *ngIf="wishlist$ | async as wishlist" class="wishlist-tile">
+  <!-- <div class="heading">{{ wishlist.wishlist_name }}</div>
   <bbd-mfe-new-list-view
     [title]="'My Wishlist'"
     [sets]="wishlist.sets"
     (setClicked)="onSetClicked($event)"
-  ></bbd-mfe-new-list-view>
+  ></bbd-mfe-new-list-view> -->
+  <div class="spacer"></div>
 </div>
 <div class="nyan-cat">
   <img src="assets/nyan-cat.gif" />

@@ -4,7 +4,7 @@
             "displayName": "Inventory Tile",
             "routerLink": "/inventory",
             "dashboardTileModel": {
-                "remoteEntry": "https://d1ybyf75vsc222.cloudfront.net/remoteEntry.js",
+                "remoteEntry": "http://localhost:4203/remoteEntry.js",
                 "remoteName": "inventory",
                 "exposedModule": "./TileComponent",
                 "routePath": "inventory",
@@ -16,7 +16,7 @@
             "displayName": "Wishlist Tile",
             "routerLink": "/wishlist",
             "dashboardTileModel": {
-                "remoteEntry": "https://d1zb197jljadkz.cloudfront.net/remoteEntry.js",
+                "remoteEntry": "http://localhost:4204/remoteEntry.js",
                 "remoteName": "wishlist",
                 "exposedModule": "./TileComponent",
                 "routePath": "wishlist",
@@ -28,7 +28,7 @@
             "displayName": "Inventory List",
             "routerLink": "/inventory-list",
             "angularModel": {
-                "remoteEntry": "https://d1ybyf75vsc222.cloudfront.net/remoteEntry.js",
+                "remoteEntry": "http://localhost:4203/remoteEntry.js",
                 "remoteName": "inventory",
                 "exposedModule": "./ListModule",
                 "routePath": "inventory-list",
@@ -39,7 +39,7 @@
             "displayName": "Wishlist",
             "routerLink": "/wish-list",
             "angularModel": {
-                "remoteEntry": "https://d1zb197jljadkz.cloudfront.net/remoteEntry.js",
+                "remoteEntry": "http://localhost:4204/remoteEntry.js",
                 "remoteName": "wishlist",
                 "exposedModule": "./ListModule",
                 "routePath": "wish-list",
@@ -50,7 +50,7 @@
             "displayName": "Profile",
             "routerLink": "/profile",
             "angularModel": {
-                "remoteEntry": "https://d3gw4qmma8dl57.cloudfront.net/remoteEntry.js",
+                "remoteEntry": "http://localhost:4205/remoteEntry.js",
                 "remoteName": "profile",
                 "exposedModule": "./ProfileModule",
                 "routePath": "profile",

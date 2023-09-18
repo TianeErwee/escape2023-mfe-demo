@@ -46,6 +46,9 @@ export const handler = async (event: any, context: any) => {
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
       body: JSON.stringify({ message: 'Item added to wishlist' }),
     };
   } catch (error) {

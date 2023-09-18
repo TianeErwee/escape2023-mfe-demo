@@ -13,14 +13,18 @@
   }
 
   .profile-picture {
-    height: 150px;
-    width: 150px;
+    height: 280px;
+    width: 280px;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(/assets/space-cat.png);
     margin: 12px auto;
+
+    .tori-face {
+      width: 200px;
+    }
   }
 
   .name-title {

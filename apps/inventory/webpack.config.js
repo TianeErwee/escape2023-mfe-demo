@@ -31,7 +31,6 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      // For remotes (please adjust)
       name: 'inventory',
       filename: 'remoteEntry.js',
       exposes: sharedExposedModules,

@@ -28,3 +28,12 @@
     transform: translateX(1000%); /* Move to the right edge */
   }
 }
+
+.wishlist-tile {
+  background-image: url('/assets/lucas.png');
+  background-size: contain;
+}
+
+.spacer {
+  height: 200px;
+}

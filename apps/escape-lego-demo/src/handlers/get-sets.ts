@@ -20,6 +20,9 @@ export const handler = async (event: any, context: any) => {
     );
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      },
       body: JSON.stringify(response.data),
     };
   } catch (error: any) {

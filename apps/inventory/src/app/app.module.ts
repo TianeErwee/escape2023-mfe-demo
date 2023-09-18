@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsModule } from '@ngxs/store';
 import { environment } from '@bbd-mfe-new/environment';
+import { LegoFacadeService, LegoState, StoreModule } from '@bbd-mfe-new/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,11 +17,13 @@ import { environment } from '@bbd-mfe-new/environment';
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxsModule.forRoot([], {
+    NgxsModule.forRoot([LegoState], {
       developmentMode: !environment.production,
     }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    StoreModule,
   ],
-  providers: [],
+  providers: [LegoFacadeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

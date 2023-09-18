@@ -33,11 +33,9 @@ export class DashboardTileComponent implements AfterViewInit {
         remoteName: this.mfe.remoteName,
         exposedModule: this.mfe.exposedModule,
       });
-      const ref = this.viewContainer.createComponent(m[this.mfe.ngModuleName]);
-      console.log('REF',ref);
+      this.viewContainer.createComponent(m[this.mfe.ngModuleName]);
       this.pageState = 'loaded';
     } catch (err) {
-      console.error('ERR',err);
       this.pageState = 'error';
     }
   }
